@@ -1,0 +1,42 @@
+import numpy as np
+
+import pandas as pd
+
+import matplotlib as plt
+
+import seaborn as sns
+
+import matplotlib.pyplot as plt
+
+filePath = ‘/Users/upgrad/Downloads/datasets-33180-43520-heart.csv’
+
+data = pd.read_csv(filePath)
+
+data.head(5)
+
+
+print(“(Rows, columns): ” + str(data.shape))
+
+data.columns
+
+data.nunique(axis=0
+data.describe()
+
+corr = data.corr()
+
+plt.subplots(figsize=(15,10))
+
+sns.heatmap(corr, xticklabels=corr.columns, yticklabels=corr.columns, annot=True, cmap=sns.diverging_palette(220, 20, as_cmap=True))
+
+sns.heatmap(corr, xticklabels=corr.columns,
+
+           yticklabels=corr.columns,
+
+           annot=True,
+
+           cmap=sns.diverging_palette(220, 20, as_cmap=True))
+
+subData = data[[‘age’,’trestbps’,’chol’,’thalach’,’oldpeak’]]
+
+sns.pairplot(subData)
+plt.figure(figsize=(12,8))
